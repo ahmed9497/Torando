@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {NavigationActions} from 'react-navigation';
 import { Text, View, StyleSheet, ImageBackground ,Image, ScrollView  } from 'react-native'
 import { white } from 'ansi-colors';
-import { Icon } from 'react-native-elements'
+import { Icon } from 'react-native-elements';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default class drawerContentComponents extends Component {
 
     navigateToScreen = ( route ) =>(
@@ -17,17 +18,17 @@ export default class drawerContentComponents extends Component {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.headerContainer}>
-                <Image style={{width: 270, height: 150}}
+                <Image style={{flex:2, height: hp('22%'),width: wp('70%') }}
                 source={require('../assets/tornado.jpg')}
 
                 />
                 
             </View>
             <View style={styles.screenContainer}>
-                <View style={styles.screen}>
+                <View style={[styles.screen,{flex:1}]}>
                 
                     <Icon size={24} name="home" type="material-community" color='black' />
-                    <Text style={{marginLeft:10}} onPress={this.navigateToScreen('Home')}>Home</Text>
+                    <Text style={{marginLeft:10,}} onPress={this.navigateToScreen('Home')}>Home</Text>
                 
                 </View>
                 <View style={styles.screen}>
@@ -79,12 +80,13 @@ const styles = StyleSheet.create({
     },
     headerContainer: {
         height: 150,
+        flex:2
     },
     headerText: {
         color: '#fff8f8',
     },
     screenContainer: {
-       
+       flex:1,
         alignContent: 'center',
         // alignItems:'flex-start'
         padding: 10,

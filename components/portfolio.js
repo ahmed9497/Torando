@@ -4,16 +4,21 @@ import {
   View,
   StyleSheet,
   ImageBackground,
-  Button,
   Dimensions,
   Image,
   TextInput,
   ScrollView
 } from "react-native";
-import { Card, SocialIcon } from "react-native-elements";
-import Projects from "./projects";
+import { Icon, Card ,Button} from "react-native-elements";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const { height, width } = Dimensions.get("window");
+
+import Footer from './footer';
+import Projects from "./projects";
+import Logo_catalog from './logo_catalog' ; 
+import { green } from "ansi-colors";
+
+          
 
 export default class componentName extends Component {
   constructor(props) {
@@ -954,7 +959,7 @@ export default class componentName extends Component {
               Responsive Websites
             </Text>
 
-            <View style={{ height: 130, marginTop: 20 }}>
+            <View style={{ height: 180, marginTop: 20 }}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -965,7 +970,7 @@ export default class componentName extends Component {
                       key={index}
                       imageUri={data.pic}
                       data={data}
-                      name="Home"
+                      
                     />
                   );
                 })}
@@ -982,7 +987,7 @@ export default class componentName extends Component {
               Dynamic Websites
             </Text>
             
-            <View style={{ height: 130, marginTop: 20 }}>
+            <View style={{ height: 180, marginTop: 20 }}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -1007,7 +1012,7 @@ export default class componentName extends Component {
               E-commerce Websites
             </Text>
 
-            <View style={{ height: 130, marginTop: 20 }}>
+            <View style={{ height: 180, marginTop: 20 }}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -1039,7 +1044,7 @@ export default class componentName extends Component {
               >
                 {logo.map((data, index) => {
                   return (
-                    <Projects
+                    <Logo_catalog
                       key={index}
                       data={data}
                     
@@ -1058,14 +1063,14 @@ export default class componentName extends Component {
             Catalogue & Brochure Design
             </Text>
 
-            <View style={{ height: 130, marginTop: 20 }}>
+            <View style={{ height: 130, marginTop: 20,marginBottom:10 }}>
               <ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
                 {catalog.map((data, index) => {
                   return (
-                    <Projects
+                    <Logo_catalog
                       key={index}
                       data={data}
                     
@@ -1075,13 +1080,119 @@ export default class componentName extends Component {
               </ScrollView>
             </View>
 
-
-
-
-
-
-
           </View>
+          <View style={{backgroundColor:'#B9B9B9',height:2,padding:10,margin:20}}/>      
+            
+          <Text
+              style={{ fontSize: 24, fontWeight: "700", paddingHorizontal: 20,marginTop:10 }}
+          >
+            Cost effective, Catalogue & Brochure Design Dubai from Tornado
+          </Text>
+          <Text
+              style={{ fontSize: 20,  paddingHorizontal: 20,marginTop:10 }}
+          >
+           Now you can show your business a new way to grow exponentially with Tornado eCommerce implementation service.
+          </Text>
+
+         
+            
+            
+            
+            
+            <View style={{flex: 1, flexDirection: 'row' , justifyContent:'center',alignContent:'center',alignItems:'center',textAlign:'center'}}>
+
+              <View style={{margin:10,marginBottom:10,borderRadius:80,backgroundColor:'#F55C4E',height:160,width:160,justifyContent:'center',alignContent:'center',alignItems:'center',textAlign:'center'}}>
+                <View>
+                  <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
+                    10+ Years
+                  </Text>
+
+                  <Text style={styles.otherText}>
+                  100% UAE based{'\n'}company since 2004
+                  </Text>
+                
+                </View>  
+
+              </View>
+              
+              <View style={{margin:10,marginBottom:10,borderRadius:80,backgroundColor:'#1BBC9B',height:160,width:160,justifyContent:'center',alignContent:'center',alignItems:'center',textAlign:'center'}}>
+                 
+                <View>
+                 <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
+                  1 Year
+                  </Text>
+
+                <Text style={styles.otherText}>
+                Free Technical{'\n'}Support
+                </Text>
+                </View>
+
+              </View>
+
+            </View>    
+           
+           
+            <View style={{flex: 1, flexDirection: 'row' , justifyContent:'center',alignContent:'center',alignItems:'center',textAlign:'center'}}>
+
+            
+              
+              <View style={{margin:10,marginBottom:10,borderRadius:80,backgroundColor:'#FD8835',height:160,width:160,justifyContent:'center',alignItems:'center',textAlign:'center'}}>
+                  
+                <View>
+                  <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
+                  Domain Successfully 
+                  </Text>
+                  <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
+                  Running
+                  </Text>
+
+                  <Text style={styles.otherText}>
+                  In Custom Design{'\n'}& Development
+                  </Text>
+                  </View>    
+             
+
+              </View>
+              <View style={{margin:10,marginBottom:10,borderRadius:80,backgroundColor:'#2AADFF',height:160,width:160,justifyContent:'center',alignItems:'center',textAlign:'center'}}>
+                  
+                <View>
+                  <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
+                  EXPERTS
+                  </Text>
+
+                  <Text style={styles.otherText}>
+                  In Custom Design{'\n'}& Development
+                  </Text>
+                  </View>    
+             
+
+              </View>
+
+            </View>    
+
+            <View style={{backgroundColor:'#B9B9B9',height:2,padding:10,margin:20}}/>      
+            <Text
+              style={{ fontSize: 24, fontWeight: "700", paddingHorizontal: 20,marginTop:10 }}
+          >
+            Location & Contact Details
+          </Text>
+
+          <Text
+              style={{ fontSize: 20,  paddingHorizontal: 20,marginTop:10 }}
+          >
+          Office # S-07, R22 France Cluster, International City, Dubai, United Arab Emirates.
+          </Text>
+          <Text
+              style={{ fontSize: 25, fontWeight:'bold', paddingHorizontal: 20,marginTop:10 }}
+          >
+         +971 4 4509840 (4 Lines)
+          </Text>
+
+           <Button title="Request A Quote" buttonStyle={{width:wp('50%'),marginHorizontal:wp('25%'),marginTop:15}}
+             onPress={()=>this.props.navigation.navigate('RequestAQuota')}
+           />     
+           <View style={{backgroundColor:'#B9B9B9',height:2,padding:10,margin:20}}/>      
+          <Footer/> 
         </ScrollView>
       </View>
     );
@@ -1092,6 +1203,13 @@ const styles = StyleSheet.create({
   container: {
     // alignItems: 'center',
     flex: 1
+  },
+  row:{
+    
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center'
+    
   },
   aboutText: {
     fontSize: 25,

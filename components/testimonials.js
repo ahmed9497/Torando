@@ -9,8 +9,9 @@ import {
   ScrollView
 } from "react-native";
 import { Icon, Card } from "react-native-elements";
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Footer from "./footer";
+
 
 export default class testimonials extends Component {
   render() {
@@ -19,9 +20,9 @@ export default class testimonials extends Component {
         <View style={styles.container}>
           <ImageBackground
             source={require("../assets/people.jpg")}
-            style={{ width: "100%", height: "100%" }}
+            style={{   width: wp('100%') ,height: hp('50%') }}
           >
-            <Card containerStyle={{ opacity: 0.6 }}>
+            <Card containerStyle={{ opacity: 0.8 }}>
               <Text style={[styles.aboutText, {}]}>
                 What People are Saying!
               </Text>
@@ -43,7 +44,7 @@ export default class testimonials extends Component {
         <Text style={[styles.aboutText, { color: "#f4a000" }]}>
           Client Testimonials
         </Text>
-        <Text style={[styles.otherText, { }]}>
+        <Text style={[styles.otherText, {textAlign:'center' }]}>
         Tornado's Creative Professionals take every opportunity to communicate new ideas broadly, seek feedback, and develop a sense of accountability.
         </Text>
 

@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View , TouchableHighlight} from 'react-native';
 import {createStackNavigator,createSwitchNavigator,createAppContainer,createDrawerNavigator} from 'react-navigation';
 import home from './components/home';
 import aboutus from './components/aboutus';
@@ -10,8 +10,11 @@ import testimonials from './components/testimonials';
 import blog from './components/blog';
 import contactus from './components/contactus';
 import requestaquota from './components/requestaquota';
+import splash from './components/splash';
+
 import drawerContentComponents from './components/drawerContentComponents';
 import { Icon } from 'react-native-elements';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
  
  
 
@@ -33,6 +36,10 @@ export default class App extends Component {
 
 const homescreen = createStackNavigator(
   {
+    Splash :{
+      screen:splash,
+    },
+
     Home :{
       screen:home,
       navigationOptions: ({navigation})=>({
@@ -44,6 +51,10 @@ const homescreen = createStackNavigator(
       })
     },
   },
+  {
+    initialRouteName: 'Splash'
+  }
+ 
   
 );
 
@@ -156,7 +167,7 @@ const requestaquotascreen = createStackNavigator(
       headerStyle: {
         backgroundColor: 'skyblue',          
       },
-      headerLeft:<Icon iconStyle={{paddingLeft:15}} size={24} name="bars" type="font-awesome" color='black' onPress={()=>navigation.openDrawer()}/> 
+      headerLeft:  <Icon iconStyle={{paddingLeft:15,shadowColor:'blue',borderRadius:50,shadowRadius:80}} size={24} name="bars" type="font-awesome" color='black' onPress={()=>navigation.openDrawer()}/>  
     })
     }
   },
@@ -226,8 +237,9 @@ const AppNavigator = createDrawerNavigator(
 
   },
   {
+    drawerWidth:wp('70%'),
     contentComponent: drawerContentComponents,
-    initialRouteName:'Portfolio'
+    initialRouteName:'ContactUs'
   });
 const AppStackNavigator=createAppContainer(AppNavigator);
 

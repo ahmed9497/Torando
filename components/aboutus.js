@@ -9,7 +9,7 @@ import {
   ScrollView
 } from "react-native";
 import { Icon, Card } from "react-native-elements";
- 
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Footer from './footer';
 
 import ProgressBarAnimated from 'react-native-progress-bar-animated';
@@ -26,13 +26,13 @@ export default class componentName extends Component {
 
   render() {
 
-    const barWidth = Dimensions.get('screen').width - 50;
+    const barWidth = wp('50%');
     const progressCustomStyles = {
       backgroundColor: '#e44d26', 
       borderRadius: 50,
       borderColor: '#e44d26',
      
-      marginLeft: 20,
+     
     };
 
 
@@ -42,7 +42,7 @@ export default class componentName extends Component {
         <View>
           <Image
             source={require("../assets/companyProfile.jpg")}
-            style={{ width: 350, height: 200 }}
+            style={{ height:hp('40%'),width: wp('100%') }}
           />
         </View>
 
@@ -58,7 +58,7 @@ export default class componentName extends Component {
 
         <Image
           source={require("../assets/aboutusImage.jpg")}
-          style={{ width: 350, height: 200 }}
+          style={{ height:hp('40%'),width: wp('100%')}}
         />
 
         <Text style={styles.otherText}>
@@ -119,7 +119,8 @@ export default class componentName extends Component {
           project.
         </Text>
 
-        <Card  image={require("../assets/mangment.png")}>
+        <Card  image={require("../assets/mangment.png") }
+        >
           <Text style={[{ ...styles.textbold }, { ...styles.otherText }]}>
             We will implement a rigorous project management:
           </Text>
@@ -207,21 +208,24 @@ export default class componentName extends Component {
         </Card>
 
         <View style={styles.skills}>
-          <Image
+          {/* <Image
             source={require("../assets/people.jpg")}
-            style={{ width: 350, height: 550 ,position:'absolute'}}
-          />
+            style={{ height:hp('45%'),width: wp('100%') ,position:'absolute',}}
+          /> */}
+
+          <Card containerStyle={{backgroundColor:'black',opacity:0.6}}> 
+
           <Text  style={[styles.aboutText,{color:'white'}]}> OUR SKILLS </Text>
           <Text  style={{color:'white',padding: 10}}>Tornado Computer Trading (L.L.C.) delivers the highest quality Website Design and Development solutions at affordable prices. Web technologies are developing swiftly. Everyday there are new innovations to apply to the creation of your Web presence. Tornado team has mastered in many different designs, techniques and programming languages and works through authentic process.
 
                  
           </Text>
           
-          <Text  style={{color:'white',padding: 10}}> Please have a look at our areas of expertise:</Text>
+          <Text  style={{color:'white',padding: 10,textAlign:'center'}}> Please have a look at our areas of expertise:</Text>
           
           <Text  style={{color:'#9cd7fd',padding: 10,textAlign:'center'}}> HTML5, CSS3, JQUERY </Text>
          
-          <View style={{ paddingHorizontal: 25,}}>
+          <View style={{ paddingHorizontal: wp('20%'),}}>
             <ProgressBarAnimated
               {...progressCustomStyles}
               width={barWidth}
@@ -233,7 +237,7 @@ export default class componentName extends Component {
          
           <Text  style={{color:'#9cd7fd',padding: 10,textAlign:'center'}}> PHP, WordPress, Joomla, Magento </Text>
          
-          <View style={{ paddingHorizontal: 25,}}>
+          <View style={{ paddingHorizontal: wp('20%'),}}>
             <ProgressBarAnimated
               {...progressCustomStyles}
               width={barWidth}
@@ -244,7 +248,7 @@ export default class componentName extends Component {
         
           <Text  style={{color:'#9cd7fd',padding: 10,textAlign:'center'}}> Search Engine Optimization </Text>
          
-          <View style={{ paddingHorizontal: 25,}}>
+          <View style={{ paddingHorizontal:  wp('20%'),}}>
             <ProgressBarAnimated
               {...progressCustomStyles}
               width={barWidth}
@@ -255,7 +259,7 @@ export default class componentName extends Component {
          
           <Text  style={{color:'#9cd7fd',padding: 10,textAlign:'center'}}> Photoshop, Illustrator </Text>
          
-          <View style={{ paddingHorizontal: 25,}}>
+          <View style={{ paddingHorizontal:  wp('20%'),}}>
             <ProgressBarAnimated
               {...progressCustomStyles}
               width={barWidth}
@@ -264,10 +268,12 @@ export default class componentName extends Component {
             />
           </View>
         
-        
+        </Card>
         </View>
+
+     
         
-        <Text  style={[styles.aboutText,{color:'blue',marginTop:50,paddingTop:40}]}> AUTHENTIC PROCESS </Text>
+        <Text  style={[styles.aboutText,{color:'blue',marginTop:20,paddingTop:20}]}> AUTHENTIC PROCESS </Text>
         <Text  style={[styles.otherText,{marginTop:5}]}> Tornado Computers provides you quality website development services by using latest techniques and most modern mechanism. We make sure that we follow a clear, systematic, coordinative method to ensure a functional & attractive website. Every requirement of customer for website, attractive graphic design, hosting service, Software Development, SEO or other web service is being taken as challenging job by following authentic process. </Text>
           
          <Footer/> 
