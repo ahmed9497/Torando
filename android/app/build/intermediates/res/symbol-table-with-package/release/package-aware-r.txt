@@ -607,6 +607,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable assets_aboutusimage
+drawable assets_abudhabioffice
 drawable assets_ananaswad
 drawable assets_aswanuae
 drawable assets_capture
@@ -672,6 +673,7 @@ drawable assets_elmacsco
 drawable assets_fbox
 drawable assets_gen_13
 drawable assets_glamourgroup
+drawable assets_headoffice
 drawable assets_koninvestments
 drawable assets_logo_mercedesrus
 drawable assets_logo_p1

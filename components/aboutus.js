@@ -38,7 +38,7 @@ export default class componentName extends Component {
 
 
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor:'#d7d7d7'}}>
         <View>
           <Image
             source={require("../assets/companyProfile.jpg")}

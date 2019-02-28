@@ -11,7 +11,7 @@ import {
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 import { Icon, Card ,CheckBox } from "react-native-elements";
-
+import Footer from "./footer";
 
 export default class componentName extends Component {
   constructor(props) {
@@ -109,7 +109,7 @@ export default class componentName extends Component {
             </View>    
 
        
-        
+            <Footer/> 
          
     </ScrollView>
 

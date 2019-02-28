@@ -100,7 +100,7 @@ export default class componentName extends Component {
 
 
     return (
-      <ScrollView>
+      <ScrollView style={{backgroundColor:'#d7d7d7'}}>
 
               <Image
                 style={{ width: wp('100%'), height: hp('30%') ,borderRadius:50}}
@@ -113,10 +113,13 @@ export default class componentName extends Component {
             <ListItem
               key={i}
               title={item.title}
+              titleStyle={{color:'black'}}
               leftIcon={<Icon  name = {item.icon} size={24} color='black'/>}
               subtitle={item.subtitle}
-
+              bottomDivider={true}
             />
+            
+            
           ))
         }
 
@@ -132,8 +135,10 @@ export default class componentName extends Component {
             <ListItem
               key={i}
               title={item.title}
+              titleStyle={{color:'black'}}
               leftIcon={<Icon  name = {item.icon} size={24} color='black'/>}
               subtitle={item.subtitle}
+              bottomDivider={true}
 
             />
           ))
@@ -187,7 +192,7 @@ export default class componentName extends Component {
                   }    
                 }            
             />  
-        <TextInput style={styles.inputBojx} 
+        <TextInput style={styles.inputBox} 
                 underlineColorAndroid='rgba(0,0,0,0)' 
                 placeholder='Email'
                 keyboardType='email-address'

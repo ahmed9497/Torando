@@ -79,7 +79,7 @@ static navigationOptions = {
             </Card>
 
 
-            <View style={{marginBottom:2,height:hp('10%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
+            <View style={{marginBottom:2,height:hp('15%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
               <Text>LOGO DESIGN / GRAPHIC DESIGN</Text>
               <Text style={{alignSelf:'center',marginHorizontal:wp('10%')}}>Whether it's for your website,
                   company presentation or an identity for your firm. We will design it for you.
@@ -88,8 +88,8 @@ static navigationOptions = {
             </View>
 
 
-            <View style={{marginBottom:2,height:hp('10%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
-              <Text>SEARCH ENGINE Optimization</Text>
+            <View style={{marginBottom:4,height:hp('15%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
+              <Text>SEARCH ENGINE OPTIMIZATIONS</Text>
               <Text style={{alignSelf:'center',marginHorizontal:wp('10%')}}>With us get your business known
                 on all major search engines such as Google, Bing and Yahoo.
               </Text>
@@ -97,7 +97,7 @@ static navigationOptions = {
             </View>
 
 
-            <View style={{marginBottom:2,height:hp('12%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
+            <View style={{marginBottom:2,height:hp('18%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
               <Text>WEB DEVELOPMENT</Text>
               <Text style={{alignSelf:'center',marginHorizontal:wp('10%'),marginBottom:10}}>We offer World class
               professional web development solutions for both small and large scale
@@ -106,7 +106,7 @@ static navigationOptions = {
 
             </View>
 
-            <View style={{marginBottom:2,height:hp('10%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
+            <View style={{marginBottom:2,height:hp('15%'),width:wp('100%'),backgroundColor:'#d7d7d7',textAlign:'center',alignItems:'center',justifyContent:"center",alignSelf:'center',flex:1,alignContent:'center'}}>
               <Text>WEB DESIGN</Text>
               <Text style={{alignSelf:'center',marginHorizontal:wp('10%')}}>Get expert hands with simple
                 and professional solutions of the best modern web trends.
@@ -217,38 +217,38 @@ static navigationOptions = {
               Our Latest Projects
             </Text>
 
-            <View style={{flexWrap:'wrap',flexDirection:'row',padding:20,justifyContent:'space-between' }}>  
+            <View style={{flexWrap:'wrap',flexDirection:'row',padding:15,justifyContent:'space-between' ,backgroundColor:'#d7d7d7'}}>  
 
               <Image
-                  style={{ width: wp('45%'), height: hp('20%')}}
-                  source={require("../assets/logo/p1.jpg")}
+                  style={{ width: wp('45%'), height: hp('20%'),marginBottom:5}}
+                  source={require("../assets/logo/p5.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%'),}}
-                  source={require("../assets/logo/p23.jpg")}
+                  style={{ width: wp('45%'), height: hp('20%'),marginBottom:5}}
+                  source={require("../assets/logo/p22.jpg")}
                 />
               <Image
-                  style={{width: wp('45%'), height: hp('20%') }}
+                  style={{width: wp('45%'), height: hp('20%'),marginBottom:5 }}
                   source={require("../assets/ecom/p3.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%') }}
+                  style={{ width: wp('45%'), height: hp('20%') ,marginBottom:5}}
                   source={require("../assets/ecom/p6.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%') }}
+                  style={{ width: wp('45%'), height: hp('20%'), marginBottom:5}}
                   source={require("../assets/catalog/p1.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%') }}
+                  style={{ width: wp('45%'), height: hp('20%') ,marginBottom:5}}
                   source={require("../assets/catalog/p2.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%') }}
+                  style={{ width: wp('45%'), height: hp('20%'),marginBottom:5 }}
                   source={require("../assets/p21.jpg")}
                 />
               <Image
-                  style={{ width: wp('45%'), height: hp('20%') }}
+                  style={{ width: wp('45%'), height: hp('20%'),marginBottom:5 }}
                   source={require("../assets/p7.jpg")}
                 />
 
@@ -256,14 +256,14 @@ static navigationOptions = {
 
             </View>
 
-            <Footer/>
+           
 
 
 
 
 
        </View> 
-
+       <Footer/>
       
       </ScrollView>
     )
