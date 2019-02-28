@@ -239,7 +239,7 @@ const AppNavigator = createDrawerNavigator(
   {
     drawerWidth:wp('70%'),
     contentComponent: drawerContentComponents,
-    initialRouteName:'ContactUs'
+    initialRouteName:'Home'
   });
 const AppStackNavigator=createAppContainer(AppNavigator);
 

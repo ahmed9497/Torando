@@ -40,7 +40,7 @@ export default class drawerContentComponents extends Component {
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('AboutUs')}>About Us</Text>
                 </View>
                 <View style={styles.screen}>
-                <Icon size={24} name="phone" type="font-awesome" color='black' />
+                <Icon size={24} name="face-agent" type="material-community" color='black' />
                     <Text  style={{marginLeft:10}}onPress={this.navigateToScreen('Services')}>Services</Text>
                 </View>
                 <View style={styles.screen}>
@@ -54,10 +54,10 @@ export default class drawerContentComponents extends Component {
                 <Icon size={24} name="format-quote-open" type="material-community" color='black' />
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('Testimonials')}>Testimonials</Text>
                 </View>
-                <View style={styles.screen}>
+                {/* <View style={styles.screen}>
                 <Icon size={24} name="blogger" type="material-community" color='black' />
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('Blog')}>Blog</Text>
-                </View>
+                </View> */}
                 <View style={styles.screen}>
                 <Icon size={24} name="sc-telegram" type="evilicon" color='black' />
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('RequestAQuota')}>Request A Quote</Text>
