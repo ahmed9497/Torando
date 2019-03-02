@@ -200,20 +200,20 @@
         "source": "C:\\Users\\PC178-\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\70796005d28489db61cdc09ebb54f685\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "D:\\ahmed\\ExpertComputers\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\PC178-\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\70796005d28489db61cdc09ebb54f685\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_assets_logo_p13.jpg.flat",
+        "source": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\assets_logo_p13.jpg"
     },
     {
         "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_assets_logo_p20.jpg.flat",
         "source": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\assets_logo_p20.jpg"
     },
     {
-        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_assets_logo_p13.jpg.flat",
-        "source": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\generated\\res\\react\\release\\drawable-mdpi\\assets_logo_p13.jpg"
+        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\PC178-\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\70796005d28489db61cdc09ebb54f685\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\ahmed\\ExpertComputers\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -1326,6 +1326,10 @@
     {
         "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldrtl-xxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\PC178-\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\70796005d28489db61cdc09ebb54f685\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-ldpi_ic_launcher.png.flat",
+        "source": "D:\\ahmed\\ExpertComputers\\android\\app\\src\\main\\res\\mipmap-ldpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\ahmed\\ExpertComputers\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",

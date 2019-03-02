@@ -13,7 +13,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icons   from 'react-native-vector-icons/FontAwesome';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Footer from "./footer";
-
+import qs from 'qs';
+import { Linking } from 'react-native';
 
 export default class componentName extends Component {
   constructor(props) {
@@ -21,6 +22,30 @@ export default class componentName extends Component {
     this.state = {
     };
   }
+  sendEmail=()=> {
+  
+    let url = `mailto:${'sales@tornado.ae'}`;
+
+    // Create email link query
+    const query = qs.stringify({
+        subject: '',
+        body: "",
+       
+    });
+
+    if (query.length) {
+        url += `?${query}`;
+    }
+
+    // check if we can use this link
+    const canOpen =  Linking.canOpenURL(url);
+
+    if (!canOpen) {
+        throw new Error('Provided URL can not be handled');
+    }
+
+    return Linking.openURL(url);
+}
 
 
 
@@ -144,7 +169,7 @@ export default class componentName extends Component {
           ))
         }
 
-        <Text style={{textAlign:'center',fontSize:30,}}>CONTACT FORM</Text>
+        {/* <Text style={{textAlign:'center',fontSize:30,}}>CONTACT FORM</Text>
         <Text style={{textAlign:'center',fontSize:15,}}>Please fill out the form below to contact us and we promise to get back to you as soon as possible.</Text>
               
         <TextInput style={styles.inputBox} 
@@ -204,9 +229,11 @@ export default class componentName extends Component {
                     this.setState({cnic:text});
                   }    
                 }            
-            />  
+            />   */}
 
-        <Button title="Submit"/>    
+        <Button title="Email Us"
+           onPress={this.sendEmail}
+        />    
 
 
       </ScrollView>

@@ -11,6 +11,7 @@ import blog from './components/blog';
 import contactus from './components/contactus';
 import requestaquota from './components/requestaquota';
 import splash from './components/splash';
+// import mail from './components/mail';
 
 import drawerContentComponents from './components/drawerContentComponents';
 import { Icon } from 'react-native-elements';
@@ -39,6 +40,9 @@ const homescreen = createStackNavigator(
     Splash :{
       screen:splash,
     },
+    // Mail :{
+    //   screen:mail,
+    // },
 
     Home :{
       screen:home,

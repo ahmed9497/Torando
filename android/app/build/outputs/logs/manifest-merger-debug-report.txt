@@ -4,6 +4,7 @@ ADDED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:1:1
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:1:1-28:12
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:1:1-28:12
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:1:1-28:12
+MERGED from [:react-native-mail] D:\ahmed\ExpertComputers\node_modules\react-native-mail\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-vector-icons] D:\ahmed\ExpertComputers\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] D:\ahmed\ExpertComputers\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.58.5] C:\Users\PC178-\.gradle\caches\transforms-1\files-1.1\react-native-0.58.5.aar\d87bfbdcdb8e941cf4f6bc185a9b8f94\AndroidManifest.xml:2:1-15:12
@@ -85,7 +86,7 @@ MERGED from [org.webkit:android-jsc:r174650] C:\Users\PC178-\.gradle\caches\tran
 	android:label
 		ADDED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:9:7-39
 	android:roundIcon
-		ADDED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:11:7-52
+		ADDED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:11:7-46
 	android:icon
 		ADDED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml:10:7-41
 	android:allowBackup
@@ -122,6 +123,8 @@ uses-sdk
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\ahmed\ExpertComputers\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-mail] D:\ahmed\ExpertComputers\node_modules\react-native-mail\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-mail] D:\ahmed\ExpertComputers\node_modules\react-native-mail\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] D:\ahmed\ExpertComputers\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] D:\ahmed\ExpertComputers\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] D:\ahmed\ExpertComputers\node_modules\react-native-gesture-handler\android\build\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:7:5-9:41

@@ -27,7 +27,7 @@ export default class drawerContentComponents extends Component {
             <View style={styles.screenContainer}>
                 <View style={[styles.screen,{flex:1}]}>
                 
-                    <Icon size={24} name="home" type="material-community" color='black' />
+                    <Icon size={24} name="home" type="material-community" color='black' onPress={this.navigateToScreen('Home')}/>
                     <Text style={{marginLeft:10,}} onPress={this.navigateToScreen('Home')}>Home</Text>
                 
                 </View>
@@ -36,22 +36,23 @@ export default class drawerContentComponents extends Component {
                         name='people'
                         type='material'
                         color='black'
+                        onPress={this.navigateToScreen('AboutUs')}
                     />
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('AboutUs')}>About Us</Text>
                 </View>
                 <View style={styles.screen}>
-                <Icon size={24} name="face-agent" type="material-community" color='black' />
+                <Icon size={24} name="face-agent" type="material-community" color='black'  onPress={this.navigateToScreen('Services')}/>
                     <Text  style={{marginLeft:10}}onPress={this.navigateToScreen('Services')}>Services</Text>
                 </View>
                 <View style={styles.screen}>
                     
-                <Icon size={24} name="folder" type="font-awesome" color='black' /> 
+                <Icon size={24} name="folder" type="font-awesome" color='black' onPress={this.navigateToScreen('Portfolio')}/> 
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('Portfolio')}>Portfolio</Text>
                 </View>
 
                 <View style={styles.screen}>
                    
-                <Icon size={24} name="format-quote-open" type="material-community" color='black' />
+                <Icon size={24} name="format-quote-open" type="material-community" color='black' onPress={this.navigateToScreen('Testimonials')}/>
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('Testimonials')}>Testimonials</Text>
                 </View>
                 {/* <View style={styles.screen}>
@@ -59,11 +60,11 @@ export default class drawerContentComponents extends Component {
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('Blog')}>Blog</Text>
                 </View> */}
                 <View style={styles.screen}>
-                <Icon size={24} name="sc-telegram" type="evilicon" color='black' />
+                <Icon size={24} name="sc-telegram" type="evilicon" color='black' onPress={this.navigateToScreen('RequestAQuota')}/>
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('RequestAQuota')}>Request A Quote</Text>
                 </View>
                 <View style={styles.screen}>
-                <Icon size={24} name="phone" type="material-community" color='black' />
+                <Icon size={24} name="phone" type="material-community" color='black' onPress={this.navigateToScreen('ContactUs')}/>
                     <Text  style={{marginLeft:10}} onPress={this.navigateToScreen('ContactUs')}>Contact Us</Text>
                 </View>
             </View>
