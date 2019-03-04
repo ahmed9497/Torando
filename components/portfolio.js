@@ -7,7 +7,7 @@ import {
   Dimensions,
   Image,
   TextInput,
-  ScrollView
+  ScrollView , Animated
 } from "react-native";
 import { Icon, Card ,Button} from "react-native-elements";
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -960,7 +960,7 @@ export default class componentName extends Component {
             </Text>
 
             <View style={{ height: 180, marginTop: 20 }}>
-              <ScrollView
+              <Animated.ScrollView
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
               >
@@ -974,7 +974,7 @@ export default class componentName extends Component {
                     />
                   );
                 })}
-              </ScrollView>
+              </Animated.ScrollView>
             </View>
             
             <View style={{backgroundColor:'#B9B9B9',height:2,padding:10,margin:20}}/>      

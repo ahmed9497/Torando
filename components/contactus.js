@@ -4,9 +4,9 @@ import {
   View,
   StyleSheet,
   ImageBackground,TextInput,
-  Dimensions,
+  Dimensions,Alert,
   Image,
-  ScrollView
+  ScrollView ,ToastAndroid
 } from "react-native";
 import { Divider, Card , ListItem, Button  } from "react-native-elements";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -19,32 +19,82 @@ import { Linking } from 'react-native';
 export default class componentName extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = {companyname:'',email:'',mobile:'', message:'',telephone:'',contactperson:''
     };
   }
   sendEmail=()=> {
-  
-    let url = `mailto:${'sales@tornado.ae'}`;
+    
+    const { companyname }  = this.state ;
+    const { contactperson }  = this.state ;
+    const { email }  = this.state ;
+    const { message }  = this.state ;
+    const { telephone }  = this.state ;
+    const { mobile }  = this.state ;
 
-    // Create email link query
-    const query = qs.stringify({
-        subject: '',
-        body: "",
+    if(companyname!="" && contactperson !="" && email!="" & message!= "" & telephone!="" & mobile!="") {
+
+    fetch('https://voldermart.000webhostapp.com/register.php', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        
+        
+        companyname: companyname,     
+        contactperson: contactperson,
+        telephone: telephone,
+        mobile: mobile,
+        email:  email,
+        message: message,
+     
+      })
+     
+    }).then((response) => response.json())
+          .then((responseJson) => {
+     
+
+            this.setState({companyname:'',email:'',mobile:'', message:'',telephone:'',contactperson:''});
+            ToastAndroid.show("Thanks for your feed back",ToastAndroid.LONG);
+            // alert(responseJson);
+           
+     
+          }).catch((error) => {
+            console.error(error);
+          });
+     
+        }
+        else {
+          ToastAndroid.show("Please complete all fields",ToastAndroid.LONG);
+        }
+     
+     
+      
+
+    
+
+    // let url = `mailto:${'sales@tornado.ae'}`;
+
+    // // Create email link query
+    // const query = qs.stringify({
+    //     subject: '',
+    //     body: "",
        
-    });
+    // });
 
-    if (query.length) {
-        url += `?${query}`;
-    }
+    // if (query.length) {
+    //     url += `?${query}`;
+    // }
 
-    // check if we can use this link
-    const canOpen =  Linking.canOpenURL(url);
+    // // check if we can use this link
+    // const canOpen =  Linking.canOpenURL(url);
 
-    if (!canOpen) {
-        throw new Error('Provided URL can not be handled');
-    }
+    // if (!canOpen) {
+    //     throw new Error('Provided URL can not be handled');
+    // }
 
-    return Linking.openURL(url);
+    // return Linking.openURL(url);
 }
 
 
@@ -169,7 +219,7 @@ export default class componentName extends Component {
           ))
         }
 
-        {/* <Text style={{textAlign:'center',fontSize:30,}}>CONTACT FORM</Text>
+        <Text style={{textAlign:'center',fontSize:30,}}>CONTACT FORM</Text>
         <Text style={{textAlign:'center',fontSize:15,}}>Please fill out the form below to contact us and we promise to get back to you as soon as possible.</Text>
               
         <TextInput style={styles.inputBox} 
@@ -177,9 +227,10 @@ export default class componentName extends Component {
                 placeholder='Company Name'
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.companyname}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({companyname:text});
                   }    
                 }            
             />  
@@ -189,9 +240,10 @@ export default class componentName extends Component {
                 placeholder='Contact Person'
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.contactperson}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({contactperson:text});
                   }    
                 }            
             />  
@@ -200,9 +252,10 @@ export default class componentName extends Component {
                 placeholder='Telephone'
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.telephone}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({telephone:text});
                   }    
                 }            
             />  
@@ -211,9 +264,10 @@ export default class componentName extends Component {
                 placeholder='Mobile'
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.mobile}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({mobile:text});
                   }    
                 }            
             />  
@@ -223,15 +277,28 @@ export default class componentName extends Component {
                 keyboardType='email-address'
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
-                
+                value={this.state.email}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({email:text});
                   }    
                 }            
-            />   */}
+            />  
+        <TextInput style={styles.inputBox} 
+                underlineColorAndroid='rgba(0,0,0,0)' 
+                placeholder='Message'
+               
+                placeholderTextColor = "#ffffff"
+                selectionColor="#fff"
+                value={this.state.message}
+                onChangeText = {
+                  (text) =>{
+                    this.setState({message:text});
+                  }    
+                }            
+            />  
 
-        <Button title="Email Us"
+        <Button title="Submit"
            onPress={this.sendEmail}
         />    
 

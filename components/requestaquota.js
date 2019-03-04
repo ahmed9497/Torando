@@ -5,7 +5,7 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
-  Image,TextInput,
+  Image,TextInput,ToastAndroid,
   ScrollView,Button,TouchableOpacity,
 } from "react-native";
 import { Icon, Card ,CheckBox } from "react-native-elements";
@@ -17,13 +17,194 @@ export default class componentName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked:true
+        companyname:'',
+        name:'',
+        address:'',
+        email:'',
+        phone:'',
+        existingyes: false,
+        existingno :false ,
+
+        site:'',
+
+        url:'',
+        urlbox:false,
+        Swd:false,
+        swdvalue:'',
+
+        Sad:false,
+        sadvalue:'',
+        
+        Swm:false,
+        swmvalue:'',
+
+        Secom:false,
+        secomvalue:'',
+
+        Spg:false,
+        spgvalue:'',
+
+        Sssl:false,
+        ssslvalue:'',
+
+        Scorp:false,
+        scorpvalue:'',
+
+        description:'',
+        contactPhone:false,
+        cpvalue:'',
+
+        contactEmail:false,
+        cevalue:'',
+
+
+        besttime:'',
+        productCatalog:'',
+        web1:'',
+        web2:'',
+        web3:'',
+
     };
   }
 
 
+  existingwebYes=()=>{
+    this.setState({existingyes:true,existingno:false ,urlbox:true }) 
+  //   if (!this.state.existingyes){
+  //     this.setState({existingyes:true,existingno:false ,urlbox:true }) 
+  //   }
+
+   
+  //  else{
+  //   this.setState({existingyes:false,existingno:false ,urlbox:true }) 
+  //  }
+
+  }
+  existingwebNO=()=>{
+
+   this.setState({existingyes:false,existingno:true ,urlbox:false ,url:''}) 
+   
+  }
+
+  Submit=()=>{
+    console.log("submite is clicked");
+
+     if (this.state.existingyes){
+       this.setState({site:'Yes'})
+
+     }
+     if (this.state.existingno){
+       this.setState({site:'No'})
+     }
+    //  else{
+    //   this.setState({site:'No'})
+    // }
+
+    const { companyname,    name,    address,    email,    phone,    
+    url,        swdvalue,    sadvalue,    swmvalue, site  ,  secomvalue,    spgvalue,
+    ssslvalue,    scorpvalue,    description,    cpvalue,    cevalue,
+    besttime,    productCatalog,    web1,    web2,    web3 }  = this.state ;
+
+    // const { companyname,    name,    address,    email,    phone,    existingyes,
+    // existingno ,    url,    urlbox,    Swd,    Sad,    Swm,    Secom,    Spg,
+    // Sssl,    Scorp,    description,    contactPhone,    contactEmail,
+    // besttime,    productCatalog,    web1,    web2,    web3 }  = this.state ;
+
+        if(name !='' && address !='' && email !='' && phone !='' && description != '' ){
+
+    fetch('https://voldermart.000webhostapp.com/rqform.php', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        
+        
+        companyname:companyname,
+        name:name,
+        address:address,
+        email:email,
+        phone:phone,
+        existingyes: site,        
+        url:url,        
+        Swd:swdvalue,
+        Sad:sadvalue,
+        Swm:swmvalue,
+        Secom:secomvalue,
+        Spg:spgvalue,
+        Sssl:ssslvalue,
+        Scorp:scorpvalue,
+        description:description,
+        contactPhone:cpvalue,
+        contactEmail:cevalue,
+        besttime:besttime,
+        productCatalog:productCatalog,
+        web1:web1,
+        web2:web2,
+        web3:web3,
+     
+      })
+     
+    }).then((response) => response.json())
+          .then((responseJson) => {     
+
+           // this.setState({companyname:'',email:'',mobile:'', message:'',telephone:'',contactperson:''});
+
+            ToastAndroid.show("Thanks for your feed back",ToastAndroid.LONG);
+            this.Reset();
+            // alert(responseJson);
+           
+     
+          }).catch((error) => {
+            console.error(error);
+          });
+     
+
+        }
+        else {
+          ToastAndroid.show("Please complete all fields",ToastAndroid.LONG);
+        }
 
 
+}
+       
+
+
+  
+  Reset=()=>{
+    console.log("resete is clicked");
+    this.setState ({
+      companyname:'',
+      name: '',
+      address: '',
+      email: '',
+      phone: '',
+      existingyes: false,
+      existingno :false ,
+      url:'',
+      urlbox:false,
+      Swd:false,
+      Sad:false,
+      Swm:false,
+      Secom:false,
+      Spg:false,
+      Sssl:false,
+      Scorp:false,
+      description:'',
+      contactPhone:false,
+      contactEmail:false,
+      besttime:'',
+      productCatalog:'',
+      web1:'',
+      web2:'',
+      web3:'',
+
+  });
+
+
+  
+  }
 
 
 
@@ -60,9 +241,10 @@ export default class componentName extends Component {
                 placeholder="Company Name(If Any)"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.companyname}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({companyname:text});
                   }    
                 }            
             />    
@@ -71,9 +253,10 @@ export default class componentName extends Component {
                 placeholder="Your Name"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.name}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({name:text});
                   }    
                 }            
             />    
@@ -82,9 +265,10 @@ export default class componentName extends Component {
                 placeholder="Address"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.address}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({address:text});
                   }    
                 }            
             />    
@@ -94,9 +278,10 @@ export default class componentName extends Component {
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
                 keyboardType='email-address'
+                value={this.state.email}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({email:text});
                   }    
                 }            
             />    
@@ -105,9 +290,10 @@ export default class componentName extends Component {
                 placeholder="Phone Number"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.phone}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({phone:text});
                   }    
                 }            
             />  
@@ -125,9 +311,9 @@ export default class componentName extends Component {
                         center
                         // title='Yes'
                         checkedColor='black'
-                        checked={this.state.checked}
+                        checked={this.state.existingyes}
                         containerStyle={{margin:0,padding:0}}
-                        
+                        onPress={this.existingwebYes}
                       />
                       
                 </View>
@@ -139,10 +325,10 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.existingno}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={this.existingwebNO}
                       />
 
                 </View>
@@ -157,9 +343,11 @@ export default class componentName extends Component {
                 placeholder="If yes, what is the URL?"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                editable={this.state.urlbox}
+                value={this.state.url}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({url:text});
                   }    
                 }            
             />   
@@ -173,10 +361,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Swd}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Swd){
+                          this.setState({Swd:false,swdvalue:''})}
+                          else {
+                            this.setState({Swd:true,swdvalue:'Website Designing'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -187,10 +382,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Sad}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Sad){
+                          this.setState({Sad:false,sadvalue:''})}
+                          else {
+                            this.setState({Sad:true,sadvalue:'Application Development'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -201,10 +403,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Swm}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Swm){
+                          this.setState({Swm:false,swmvalue:''})}
+                          else {
+                            this.setState({Swm:true,swmvalue:'Website Maintanance'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -215,10 +424,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Secom}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Secom){
+                          this.setState({Secom:false,secomvalue:''})}
+                          else {
+                            this.setState({Secom:true ,secomvalue:'E Commerce Solutions'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -229,10 +445,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Spg}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Spg){
+                          this.setState({Spg:false ,spgvalue:''})}
+                          else {
+                            this.setState({Spg:true , spgvalue:'Payment Gateway'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -243,10 +466,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Sssl}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => {
+                          if (this.state.Sssl){
+                          this.setState({Sssl:false ,ssslvalue:''})}
+                          else {
+                            this.setState({Sssl:true , ssslvalue:'SSL Certificate'})
+                          }
+                          }
+                        }
                       />
 
                 </View>     
@@ -257,10 +487,17 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.Scorp}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        onPress={() => this.setState({checked: !this.state.checked})}
+                        onPress={() => {
+                          if (this.state.Scorp){
+                          this.setState({Scorp:false , scorpvalue:''})}
+                          else {
+                            this.setState({Scorp:true ,scorpvalue:'Corporate Multimedia Presentation'})
+                          }
+                          }
+                        }
                         
                       />
 
@@ -276,9 +513,10 @@ export default class componentName extends Component {
                 placeholder="Project Description"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.description}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({description:text});
                   }    
                 }            
             /> 
@@ -301,10 +539,10 @@ export default class componentName extends Component {
                         center
                         // title='Yes'
                         checkedColor='black'
-                        checked={this.state.checked}
+                        checked={this.state.contactPhone}
                         containerStyle={{margin:0,padding:0}}
-                        
-                      />
+                        onPress={() => this.setState({contactPhone:true ,cpvalue:'Phone' ,contactEmail:false})}
+                        />
                       
                 </View>
 
@@ -315,12 +553,11 @@ export default class componentName extends Component {
                       <CheckBox
                         center
                         // title='Yes'
-                        checked={this.state.checked}
+                        checked={this.state.contactEmail}
                         containerStyle={{margin:0,padding:0}}
                         checkedColor='black'
-                        
+                        onPress={() => this.setState({contactPhone:false ,cevalue:'Email' ,contactEmail:true})}
                       />
-
                 </View>
 
                 <TextInput style={styles.inputBox} 
@@ -328,9 +565,10 @@ export default class componentName extends Component {
                 placeholder="what is the best time to contact you"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.besttime}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({besttime:text});
                   }    
                 }            
             /> 
@@ -339,9 +577,10 @@ export default class componentName extends Component {
                 placeholder="Products in your catalog"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.productCatalog}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({productCatalog:text});
                   }    
                 }            
             /> 
@@ -352,9 +591,10 @@ export default class componentName extends Component {
                 placeholder="http://www.mydomain.com"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.web1}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({web1:text});
                   }    
                 }            
             /> 
@@ -364,9 +604,10 @@ export default class componentName extends Component {
                 placeholder="http://www.mydomain.com"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.web2}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({web2:text});
                   }    
                 }            
             /> 
@@ -376,9 +617,10 @@ export default class componentName extends Component {
                 placeholder="http://www.mydomain.com"
                 placeholderTextColor = "#ffffff"
                 selectionColor="#fff"
+                value={this.state.web3}
                 onChangeText = {
                   (text) =>{
-                    this.setState({cnic:text});
+                    this.setState({web3:text});
                   }    
                 }            
             /> 
@@ -387,12 +629,14 @@ export default class componentName extends Component {
 
           <View style={{flexDirection:'row',alignContent:'center'}}>      
           <TouchableOpacity style={styles.button}
-            onPress={this.onRegister}>
+            onPress={this.Submit}>
             
             <Text style={styles.buttonText}>Submit</Text>
-            </TouchableOpacity> 
+          </TouchableOpacity> 
+
+
             <TouchableOpacity style={styles.button}
-            onPress={this.onRegister}>
+            onPress={this.Reset}>
             
             <Text style={styles.buttonText}>Reset</Text>
             </TouchableOpacity> 
@@ -405,7 +649,7 @@ export default class componentName extends Component {
 
       </ScrollView>
     );
-  }
+    }
 }
 
 

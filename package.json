@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "qs": "6.6.0",
     "react": "16.6.3",
     "react-native": "0.58.5",
     "react-native-elements": "^1.0.0",
@@ -15,8 +16,7 @@
     "react-native-progress-bar-animated": "^1.0.6",
     "react-native-responsive-screen": "^1.2.0",
     "react-native-vector-icons": "^6.3.0",
-    "react-navigation": "^3.3.0",
-    "qs": "6.6.0"
+    "react-navigation": "^3.3.0"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",

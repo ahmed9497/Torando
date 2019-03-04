@@ -11,7 +11,7 @@ import blog from './components/blog';
 import contactus from './components/contactus';
 import requestaquota from './components/requestaquota';
 import splash from './components/splash';
-// import mail from './components/mail';
+import mail from './components/mail';
 
 import drawerContentComponents from './components/drawerContentComponents';
 import { Icon } from 'react-native-elements';
@@ -243,7 +243,7 @@ const AppNavigator = createDrawerNavigator(
   {
     drawerWidth:wp('70%'),
     contentComponent: drawerContentComponents,
-    initialRouteName:'Home'
+    initialRouteName:'RequestAQuota'
   });
 const AppStackNavigator=createAppContainer(AppNavigator);
 
